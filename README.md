@@ -1,10 +1,33 @@
 # Scratch SVG Editor
 
-前回の `Support for the experimental syntax 'jsx'` エラーを修正した版です。
-BabelのJSX設定を `webpack.config.js` の `babel-loader` に直接指定しています。
+Scratch Paintを利用したSVGエディタです。
 
-GitHub Pages:
-1. ZIPを展開
-2. リポジトリのルートへ中身を上書き
-3. Commit
-4. Settings > Pages > Source を GitHub Actions にする
+## 今回の修正
+
+GitHub Actionsで発生した
+
+`Module parse failed: Unexpected token`
+
+および
+
+`Support for the experimental syntax 'jsx' isn't currently enabled`
+
+に対応しています。
+
+原因は `scratch-paint` がnpmパッケージとしてインストールされた後も
+`node_modules/scratch-paint/src/*.jsx` をWebpackが直接読んでいたことです。
+
+`webpack.config.js` でアプリ本体だけでなく
+`node_modules/scratch-paint` も `babel-loader` の対象にしています。
+
+## GitHub Pages
+
+リポジトリのルートへこのZIPの中身を上書きしてCommitしてください。
+
+Settings > Pages > Source を `GitHub Actions` にします。
+
+その後、mainへのpushで自動ビルド・デプロイされます。
+
+## License
+
+AGPL-3.0-only
