@@ -1,13 +1,16 @@
 # Scratch SVG Editor
-Scratch Paint を使った SVG / ベクターエディタの GitHub Pages 用プロジェクトです。
 
-## ローカル
-npm install
-npm run build
-npm start
+Scratch Paintを使ったSVG/ベクターエディタのGitHub Pages用プロジェクトです。
+
+前回の依存関係エラーの原因だった `react-intl-redux@2.0.0` を `2.4.1` に更新し、React 18 / React Intl 6系に合わせています。
 
 ## GitHub Pages
-Settings → Pages → Source を GitHub Actions にして main へ push。
+
+ZIPを展開して、`ScratchSvgEditor` リポジトリのルートへ中身を上書きしてください。
+`.github/workflows/pages.yml` も上書きしてCommitすると、自動でビルド・公開されます。
+
+PagesのSourceは `GitHub Actions` にします。
 
 ## License
-Scratch Paint is AGPL-3.0-only. Scratch の商標・ブランドについては公式条件を確認してください。
+
+Scratch Paint: AGPL-3.0-only
